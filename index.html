@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanna Play CODM?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            margin-top: 100px;
+        }
+        .container {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #00ff00;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+        #extraQuestions {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Wanna play CODM? 🎮🔥</h1>
+    <button class="btn yes" onclick="yesClicked()">Yes</button>
+    <button class="btn no" onclick="noClicked()">No</button>
+    <div id="extraQuestions"></div>
+</div>
+
+<script>
+    let questions = [
+        "Are you sure? 😢",
+        "Why not? 🥺",
+        "Come on, it'll be fun! 🤩",
+        "Do you hate me? 😭",
+        "What if I carry you? 😎",
+        "Think again... 👀",
+        "I'll let you pick the mode! 🎯",
+        "Okay, last chance... 😶",
+        "Bruh, just say yes already! 😂"
+    ];
+
+    let index = 0;
+
+    function yesClicked() {
+        alert("Let's gooo! 🎮🔥 See you in CODM!");
+    }
+
+    function noClicked() {
+        if (index < questions.length) {
+            let div = document.getElementById("extraQuestions");
+            let newQuestion = document.createElement("p");
+            newQuestion.innerText = questions[index];
+            div.appendChild(newQuestion);
+            index++;
+        } else {
+            alert("Fine... You win. 😔");
+        }
+    }
+</script>
+
+</body>
+</html>
